@@ -35,4 +35,4 @@ COPY entrypoint.sh /opt/ts3server
 RUN chmod +x /opt/ts3server/entrypoint.sh
 
 ENTRYPOINT ["/opt/ts3server/entrypoint.sh"]
-CMD ["ts3server license_accepted=1"]
+CMD ["ts3server"]
