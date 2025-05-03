@@ -8,6 +8,7 @@ echo "PWD: $(pwd)" >&2
 ls -la /opt/ts3server >&2
 
 touch /opt/ts3server/entrypoint_marker
+touch /opt/ts3server/.ts3server_license_accepted
 
 echo ">>> Запуск entrypoint.sh" >&2
 echo ">>> Аргументы: $@" >&2
