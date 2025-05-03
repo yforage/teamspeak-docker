@@ -34,5 +34,7 @@ EXPOSE 9987/udp 10011 30033
 COPY entrypoint.sh /opt/ts3server
 RUN chmod +x /opt/ts3server/entrypoint.sh
 
+ENV TS3SERVER_LICENSE=accept
+
 ENTRYPOINT ["/opt/ts3server/entrypoint.sh"]
 CMD ["ts3server"]
