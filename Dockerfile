@@ -43,4 +43,4 @@ RUN echo "=== Содержимое /opt/ts3server/entrypoint.sh ===" && \
     cat /opt/ts3server/entrypoint.sh
 
 ENTRYPOINT ["/opt/ts3server/entrypoint.sh"]
-CMD [ "ts3server" ]
+CMD ["sh", "-c", "if [ -f /opt/ts3server/entrypoint_marker ]; then echo 'Маркер найден. Запуск ts3server'; exec ts3server; else echo 'Маркер НЕ найден. Ошибка.'; exit 1; fi"]

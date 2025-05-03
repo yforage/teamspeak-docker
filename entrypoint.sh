@@ -1,6 +1,14 @@
 #!/bin/sh
 set -ex
 
+echo ">>> Скрипт работает — пауза 300 сек." >&2
+sleep 300
+
+echo "PWD: $(pwd)" >&2
+ls -la /opt/ts3server >&2
+
+touch /opt/ts3server/entrypoint_marker
+
 echo ">>> Запуск entrypoint.sh" >&2
 echo ">>> Аргументы: $@" >&2
 env >&2
