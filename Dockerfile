@@ -38,11 +38,9 @@ RUN echo "=== Проверка корневой директории" && \
     ls -la && \
     echo "=== Проверка директории teamspeak" && \
     ls -la /opt/ts3server
-    
-RUN echo "=== Проверка entrypoint.sh ===" && \
-    ls -l /opt/ts3server/entrypoint.sh && \
-    file /opt/ts3server/entrypoint.sh && \
-    head -n 20 /opt/ts3server/entrypoint.sh || echo "Файл не найден"
+
+RUN echo "=== Содержимое /opt/ts3server/entrypoint.sh ===" && \
+    cat /opt/ts3server/entrypoint.sh
 
 ENTRYPOINT ["/opt/ts3server/entrypoint.sh"]
 CMD [ "ts3server" ]
