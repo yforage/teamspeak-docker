@@ -33,4 +33,5 @@ EXPOSE 9987/udp 10011 30033
 
 COPY entrypoint.sh /opt/ts3server
 
-CMD ["ls"]
+ENTRYPOINT [ "entrypoint.sh" ]
+CMD [ "ts3server" ]
