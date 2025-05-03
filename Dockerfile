@@ -34,5 +34,10 @@ EXPOSE 9987/udp 10011 30033
 COPY entrypoint.sh /opt/ts3server
 RUN chmod +x /opt/ts3server/entrypoint.sh
 
+RUN echo "=== Проверка entrypoint.sh ===" && \
+    ls -l /opt/ts3server/entrypoint.sh && \
+    file /opt/ts3server/entrypoint.sh && \
+    head -n 20 /opt/ts3server/entrypoint.sh || echo "Файл не найден"
+    
 ENTRYPOINT ["/opt/ts3server/entrypoint.sh"]
 CMD [ "ts3server" ]
