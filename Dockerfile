@@ -32,9 +32,10 @@ WORKDIR /var/ts3server/
 EXPOSE 9987/udp 10011 30033 
 
 COPY entrypoint.sh /opt/ts3server
-RUN echo "=== Файлы в / ===" && ls -la / && \
-    echo "=== Проверка /entrypoint.sh ===" && \
-    if [ -f /entrypoint.sh ]; then echo "entrypoint.sh найден"; else echo "entrypoint.sh НЕ найден"; fi
+RUN echo "=== Содержимое /opt/ts3server ===" && \
+    ls -la /opt/ts3server && \
+    echo "=== Проверка наличия entrypoint.sh ===" && \
+    if [ -f /opt/ts3server/entrypoint.sh ]; then echo "entrypoint.sh найден"; else echo "entrypoint.sh НЕ найден"; fi
 
 ENTRYPOINT [ "entrypoint.sh" ]
 CMD [ "ts3server" ]
